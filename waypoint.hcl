@@ -19,7 +19,7 @@ app "tfc-test" {
   }
 }
 
-variable "ecs_cluster" {
+variable "tfc_dev" {
   default = dynamic("terraform-cloud", {
     organization = "acmecorpinfra"
     workspace    = "acmeapp1-dev-us-east-1"
