@@ -13,7 +13,8 @@ app "tfc-test" {
     use "docker" {
       static_environment = {
         "izaak": "test",
-        "tfcvar": var.tfc_dev.ecs_cluster_dev
+        "tfcvar": var.tfc_dev.ecs_cluster_name
+#        "tfcvar": var.tfc_dev.ecs_cluster_dev
       }
     }
   }
@@ -21,8 +22,10 @@ app "tfc-test" {
 
 variable "tfc_dev" {
   default = dynamic("terraform-cloud", {
-    organization = "acmecorpinfra"
-    workspace    = "acmeapp1-dev-us-east-1"
+    organization = "hc-waypoint"
+    workspace    = "hashiconf-demo"
+#    organization = "acmecorpinfra"
+#    workspace    = "acmeapp1-dev-us-east-1"
     all_outputs  = "true"
   })
   type    = map(string)
