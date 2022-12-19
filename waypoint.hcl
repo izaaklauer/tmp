@@ -28,7 +28,8 @@ variable "tfc_dev" {
 #    workspace    = "acmeapp1-dev-us-east-1"
     all_outputs  = "true"
   })
-  type    = map(string)
+  type    = any
+#  type    = map(string)
   sensitive   = false
   description = "acmeapp1 outputs"
 }
