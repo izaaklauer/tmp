@@ -11,11 +11,12 @@ app "tfc-test" {
 
   deploy {
     use "docker" {
-      static_environment = {
-        "izaak": "test",
-        "tfcvar": var.tfc_dev.ecs_cluster_name
-#        "tfcvar": var.tfc_dev.ecs_cluster_dev
-      }
+      static_environment = var.tfc_dev
+#      static_environment = {
+#        "izaak": "test",
+#        "tfcvar": var.tfc_dev.ecs_cluster_name
+##        "tfcvar": var.tfc_dev.ecs_cluster_dev
+#      }
     }
   }
 }
@@ -28,7 +29,7 @@ variable "tfc_dev" {
 #    workspace    = "acmeapp1-dev-us-east-1"
     all_outputs  = "true"
   })
-  type    = string
+  type    = any
 #  type    = any
 #  type    = map(string)
   sensitive   = false
